@@ -9,14 +9,11 @@ jobs:
   deploy:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
-      - name: Install Node
-        run: nvm install 22
-      - name: Build
-        uses: TartanLlama/actions-eleventy@master
-        with:
-          args: --output _site
-          install_dependencies: true
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build website
+        run: npx @11ty/eleventy
 
       - name: Deploy to S3
         env:
