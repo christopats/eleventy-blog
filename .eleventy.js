@@ -5,9 +5,13 @@ export default function (eleventyConfig) {
     passthroughFileCOpy: true,
     dir: {
       input: "src",
-      includes: "_includes",
-      data: "_data",
       output: "_site",
+      includes: "includes",
+      data: "data",
+      layouts: "layouts",
     },
+    templateFormats: ["njk", "md"],
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
   };
 }
