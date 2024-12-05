@@ -15,7 +15,8 @@ jobs:
       - name: Build website
         run: |
           npm install npm-run-all
-          npm run start
+          npm run build:11ty
+          npm run build:css
 
       - name: Deploy to S3
         env:
